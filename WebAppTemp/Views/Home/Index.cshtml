@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Temp Conversion";
+    @model TemperatureModel
+}
+
+<div class="text-center">
+    <h2>Convert Values</h2>
+    <br>
+
+    <form method="post" action="/" id="form">
+        from:
+        <select name="TempFrom" id="TempFrom" form="form">
+            <option default value="">--</option>
+            <option value="Celcius">Celcius</option>
+            <option value="Fahrenheit">Fahrenheit</option>
+            <option value="Kelvin">Kelvin</option>
+        </select>
+        to:
+        <select name="TempTo" id="TempTo" form="form">
+            <option default value="">--</option>
+            <option value="Celcius">Celcius</option>
+            <option value="Fahrenheit">Fahrenheit</option>
+            <option value="Kelvin">Kelvin</option>
+        </select>
+        <br>
+        <br>
+        <input style="width: 60px;" value="0" name="InitialValue" type="number" />
+        <input type="submit" value="submit" />
+        <br>
+        <br>
+    </form>
+    @{
+        if (Model.ConversionResult != null)
+        {
+            <h3>@Model.ConversionResult</h3>
+        }
+    }
+</div>
